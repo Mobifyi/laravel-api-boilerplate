@@ -1,10 +1,22 @@
 {
     "swagger": "2.0",
     "info": {
-        "title": "Article API",
+        "title": "Article api",
+        "description": "This is our demo api.",
+        "termsOfService": "",
+        "contact": {
+            "email": "rahul@3embed.com"
+        },
+        "license": {
+            "name": "3Embed",
+            "url": "https://www.3embed.com"
+        },
         "version": "1.0.0"
     },
-    "basePath": "/api",
+    "host": "laravel-demo.uberforall.com/api",
+    "schemes": [
+        "https"
+    ],
     "paths": {
         "/articles": {
             "get": {
@@ -40,21 +52,16 @@
                 "parameters": [
                     {
                         "name": "title",
-                        "in": "body",
+                        "in": "formData",
                         "description": "Title.",
                         "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
+                        "type": "string"
                     },
                     {
                         "name": "body",
-                        "in": "body",
-                        "description": "Body.",
+                        "in": "formData",
+                        "description": "article Body.",
                         "required": true,
-                        "schema": {
-                            "type": "integer"
-                        },
                         "type": "string"
                     },
                     {
@@ -129,22 +136,16 @@
                     },
                     {
                         "name": "title",
-                        "in": "body",
+                        "in": "formData",
                         "description": "Title.",
                         "required": true,
-                        "schema": {
-                            "type": "integer"
-                        },
                         "type": "string"
                     },
                     {
                         "name": "body",
-                        "in": "body",
-                        "description": "Body.",
+                        "in": "formData",
+                        "description": "article Body",
                         "required": true,
-                        "schema": {
-                            "type": "integer"
-                        },
                         "type": "string"
                     },
                     {
@@ -212,14 +213,14 @@
                 "parameters": [
                     {
                         "name": "email",
-                        "in": "path",
+                        "in": "formData",
                         "description": "Target email.",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "name": "password",
-                        "in": "path",
+                        "in": "formData",
                         "description": "Target password.",
                         "required": true,
                         "type": "string"
@@ -235,12 +236,7 @@
                     "500": {
                         "description": "internal server error"
                     }
-                },
-                "security": [
-                    {
-                        "Bearer": []
-                    }
-                ]
+                }
             }
         },
         "/register": {
@@ -250,28 +246,28 @@
                 "parameters": [
                     {
                         "name": "name",
-                        "in": "path",
+                        "in": "formData",
                         "description": "Target name.",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "name": "email",
-                        "in": "path",
+                        "in": "formData",
                         "description": "Target email.",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "name": "password",
-                        "in": "path",
+                        "in": "formData",
                         "description": "Target password.",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "name": "password_confirmation",
-                        "in": "path",
+                        "in": "formData",
                         "description": "Target password_confirmation.",
                         "required": true,
                         "type": "string"
@@ -287,14 +283,20 @@
                     "500": {
                         "description": "internal server error"
                     }
-                },
-                "security": [
-                    {
-                        "Bearer": []
-                    }
-                ]
+                }
             }
         }
     },
-    "definitions": {}
+    "definitions": {},
+    "securityDefinitions": {
+        "default": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    },
+    "externalDocs": {
+        "description": "Find out more about this in our FAQ",
+        "url": "https://www.3embed.com"
+    }
 }

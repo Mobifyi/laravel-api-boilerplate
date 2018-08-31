@@ -25,6 +25,12 @@ class ArticleController extends Controller
      *   @SWG\Response(response=500, description="internal server error")
      * )
      */
+     /**
+     * get all article.
+     *
+     * @param  Request  $request
+     * @return Response
+     */
     public function index()
     {
         return Article::all();
@@ -54,6 +60,11 @@ class ArticleController extends Controller
      *   @SWG\Response(response=406, description="not acceptable"),
      *   @SWG\Response(response=500, description="internal server error")
      * )
+     */
+    /**
+     * Show the form to create a new article.
+     *
+     * @return Response
      */
     public function show(Article $article)
     {
@@ -91,6 +102,13 @@ class ArticleController extends Controller
      *   @SWG\Response(response=406, description="not acceptable"),
      *   @SWG\Response(response=500, description="internal server error")
      * )
+     */
+
+     /**
+     * Store a new article.
+     *
+     * @param  Request  $request
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -138,6 +156,12 @@ class ArticleController extends Controller
      *   @SWG\Response(response=500, description="internal server error")
      * )
      */
+     /**
+     * update article.
+     *
+     * @param  Request  $request
+     * @return Response
+     */
     public function update(Request $request, Article $article)
     {
         $article->update($request->all());
@@ -169,6 +193,12 @@ class ArticleController extends Controller
      *   @SWG\Response(response=406, description="not acceptable"),
      *   @SWG\Response(response=500, description="internal server error")
      * )
+     */
+     /**
+     * delete article.
+     *
+     * @param  Request  $request
+     * @return Response
      */
     public function delete(Article $article)
     {

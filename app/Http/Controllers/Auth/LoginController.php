@@ -55,6 +55,13 @@ class LoginController extends Controller
      * )
      */
 
+   /**
+     * Login
+     *
+     * @param  Request  $request
+     * @return Response
+     */
+
     public function login(Request $request)
     {
         $this->validateLogin($request);
