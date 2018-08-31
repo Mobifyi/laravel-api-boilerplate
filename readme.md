@@ -55,27 +55,61 @@ For Article API Calls you need one authorization token which you will get from l
 ## test command will be available like this:
 `composer test`
 
+## Laravel API Documentation Generator
+Automatically generate your API documentation from your existing Laravel routes
+
+Go to your config/app.php and add the service provider:
+
+`Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,`
+
+To generate your API documentation, use the api:generate artisan command.
+
+`$ php artisan api:generate --routePrefix="api/*"`
+
+
+
 ## Laravel Best Practices
 
 =>	Only store custom applicaton code in git.
+
 =>	all dependencies only need to be referenced in the composer.json file.
+
 =>	Use generators instead of creating code manually.
+
 =>	All controller classes must have a corresponding unit test class
+
 =>	Create a new migration for each database change.
+
 =>	Never trust or directly use user input.
+
 =>	never manually generate SQL queries by concatenating hard-coded SQL with user input. 
+
 =>	Create base classes for all model, controller, view classes.
+
 =>	Always include external libraries via composer. 
+
 =>	Never change code in an external library.
+
 =>	Business logic should be in service class.
+
 =>	Reuse code when you can. SRP is helping you to avoid duplication.
+
 =>	Prefer to use Eloquent over using Query Builder and raw SQL queries.
+
 =>	Comment your code, but prefer descriptive method and variable names over comments.
+
 =>	Do not put JS and CSS in Blade templates and do not put any HTML in PHP classes.
+
 =>	Use config and language files, constants instead of text in the code.
+
 =>	Use standard Laravel tools accepted by community.
+
 =>	Follow Laravel naming conventions.
+
 =>	Use shorter and more readable syntax where possible.
+
 =>	Store dates in the standard format. Use accessors and mutators to modify date format.
+
 =>	Never put any logic in routes files.
+
 => create an "authentication" session to protect the specific routes and give access just to an authorized person.
